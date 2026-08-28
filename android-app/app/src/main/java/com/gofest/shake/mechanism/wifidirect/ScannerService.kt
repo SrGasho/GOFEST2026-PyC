@@ -92,9 +92,7 @@ class ScannerService : Service() {
 
         p2p.setDnsSdResponseListeners(
             p2pChannel,
-            WifiP2pManager.DnsSdServiceResponseListener { _, _, _ ->
-                // The TXT record listener below carries everything we need.
-            },
+            WifiP2pManager.DnsSdServiceResponseListener { instanceName, _, _ -> onServiceAvailable(instanceName) },
             WifiP2pManager.DnsSdTxtRecordListener { _, record, _ -> onTxtRecord(record) },
         )
 
@@ -102,18 +100,39 @@ class ScannerService : Service() {
         handler.post(discoveryCycle)
     }
 
+    /**
+     * Primary detection path: the emergencyId already travels in the DNS-SD instance
+     * name (see BeaconService), and unlike the TXT record this callback fires
+     * reliably across devices/OEMs.
+     */
+    private fun onServiceAvailable(instanceName: String?) {
+        val prefix = "${WifiDirectConstants.SERVICE_INSTANCE_PREFIX}-"
+        val emergencyId = instanceName?.takeIf { it.startsWith(prefix) }?.removePrefix(prefix).orEmpty()
+        if (emergencyId.isBlank()) return
+        registerBeacon(emergencyId, personName = "", status = "")
+    }
+
+    /** Secondary enrichment path: fills in name/status when the TXT record does arrive. */
     private fun onTxtRecord(record: Map<String, String>?) {
         val emergencyId = record?.get(WifiDirectConstants.TXT_KEY_EMERGENCY_ID).orEmpty()
         if (emergencyId.isBlank()) return
-
-        val beacon = Beacon(
+        registerBeacon(
             emergencyId = emergencyId,
             personName = record?.get(WifiDirectConstants.TXT_KEY_NAME).orEmpty(),
             status = record?.get(WifiDirectConstants.TXT_KEY_STATUS).orEmpty(),
+        )
+    }
+
+    private fun registerBeacon(emergencyId: String, personName: String, status: String) {
+        val previous = seen[emergencyId]
+        val beacon = Beacon(
+            emergencyId = emergencyId,
+            personName = personName.ifBlank { previous?.personName.orEmpty() },
+            status = status.ifBlank { previous?.status.orEmpty() },
             lastSeenElapsed = SystemClock.elapsedRealtime(),
         )
-        val known = seen.put(emergencyId, beacon)
-        if (known == null) {
+        seen[emergencyId] = beacon
+        if (previous == null) {
             Log.i(TAG, "Beacon encontrado: $emergencyId")
             sendBroadcast(
                 Intent(WifiDirectConstants.BROADCAST_BEACON_FOUND)
