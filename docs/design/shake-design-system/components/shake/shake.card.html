@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" viewport="700x460" name="Shake patterns" subtitle="Person status, avatars, registry rows and the event banner" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>body{padding:20px;background:var(--md-surface);display:flex;align-items:center}#root{width:100%}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script><script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">const {StatusChip, Avatar, PersonRow, SeismicBar, BeaconControl} = window.ShakeDesignSystem_bf929b;
+function Demo(){return(<div className="col" style={{gap:14}}>
+<div className="row">{['safe','missing','unconfirmed','injured','searching'].map(s=><StatusChip key={s} status={s}/>)}</div>
+<div className="row" style={{gap:14}}><Avatar name="Mei Tanaka" status="missing"/><Avatar name="Ken Ito" status="safe"/><Avatar name="Aya Sato" status="unconfirmed"/><Avatar icon="groups" size={40}/><Avatar name="Riku Mori" size={56} status="injured"/></div>
+<SeismicBar magnitude="6.4" place="12 km NE of Nagoya" time="Today 04:12 JST" level={5} style={{borderRadius:'var(--shape-md)'}}/>
+<div className="row" style={{gap:40,justifyContent:'center',padding:'8px 0'}}>
+<BeaconControl mode="sos" size={132}/><BeaconControl mode="search" size={132} active/></div>
+<div style={{border:'1px solid var(--md-outline-variant)',borderRadius:'var(--shape-md)',overflow:'hidden',background:'var(--md-surface-container-lowest)'}}>
+<PersonRow name="Mei Tanaka" status="missing" lastSeen="Sakae 3-chome, Naka-ku" updated="8 min ago" distance="1.2 km" onClick={()=>{}}/>
+<PersonRow name="Ken Ito" status="safe" lastSeen="Higashi-ku evacuation centre" updated="just now" distance="3.8 km" divider={false} onClick={()=>{}}/></div>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);</script></body></html>

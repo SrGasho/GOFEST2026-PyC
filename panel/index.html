@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shake — Panel de rescate</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- El script de Maps llama a initMap() en cuanto carga, que puede ser antes o
+       despues de que el modulo main.js se evalue. Este stub resuelve la carrera:
+       main.js espera esta promesa en vez de definir el callback el mismo. -->
+  <script>
+    window.mapsApiReady = new Promise(function (resolve, reject) {
+      window.initMap = resolve;
+      window.onMapsApiError = reject;
+    });
+  </script>
+</head>
+<body>
+  <header class="app-bar">
+    <h1>Shake — Panel de rescate</h1>
+    <span id="conn-state" class="conn-state">Conectando…</span>
+  </header>
+
+  <main>
+    <div id="map" role="application" aria-label="Mapa de personas y albergues"></div>
+
+    <aside class="sidebar">
+      <section class="panel-section">
+        <h2>Personas <span id="people-count" class="count-badge">0</span></h2>
+        <ul id="people-list" class="card-list"></ul>
+      </section>
+
+      <section class="panel-section">
+        <h2>Alertas recientes <span id="alerts-count" class="count-badge">0</span></h2>
+        <ul id="alerts-list" class="card-list"></ul>
+      </section>
+
+      <section class="panel-section">
+        <h2>Albergues <span id="shelters-count" class="count-badge">0</span></h2>
+        <ul id="shelters-list" class="card-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script type="module" src="main.js"></script>
+
+  <!-- TODO: sustituir REPLACE_WITH_REAL_MAPS_API_KEY por una clave real de la
+       Google Maps JavaScript API (ver README.md). -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnShq0P4SWGpeiQMK8j7ZDYKgzXkvaKAk&callback=initMap"
+    onerror="window.onMapsApiError(new Error('No se pudo cargar el script de Google Maps'))"
+    async defer></script>
+</body>
+</html>

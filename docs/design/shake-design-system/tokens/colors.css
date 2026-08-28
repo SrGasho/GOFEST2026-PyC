@@ -1,0 +1,39 @@
+:root{
+/* Material 3 colour roles — light scheme */
+--md-primary:var(--p-40);--md-on-primary:var(--p-100);--md-primary-container:var(--p-90);--md-on-primary-container:var(--p-10);
+--md-secondary:var(--s-40);--md-on-secondary:#FFFFFF;--md-secondary-container:var(--s-90);--md-on-secondary-container:var(--s-10);
+--md-tertiary:var(--t-40);--md-on-tertiary:#FFFFFF;--md-tertiary-container:var(--t-90);--md-on-tertiary-container:var(--t-10);
+--md-error:var(--e-40);--md-on-error:#FFFFFF;--md-error-container:var(--e-90);--md-on-error-container:var(--e-10);
+--md-caution:var(--c-40);--md-on-caution:#FFFFFF;--md-caution-container:var(--c-90);--md-on-caution-container:var(--c-10);
+--md-surface:var(--n-98);--md-on-surface:var(--n-10);--md-surface-variant:var(--nv-90);--md-on-surface-variant:var(--nv-30);
+--md-surface-dim:var(--n-87);--md-surface-bright:var(--n-98);
+--md-surface-container-lowest:var(--n-100);--md-surface-container-low:var(--n-96);--md-surface-container:var(--n-94);--md-surface-container-high:var(--n-92);--md-surface-container-highest:var(--n-90);
+--md-outline:var(--nv-50);--md-outline-variant:var(--nv-80);
+--md-inverse-surface:var(--n-20);--md-inverse-on-surface:var(--n-95);--md-inverse-primary:var(--p-80);
+--md-scrim:var(--n-0);--md-shadow:var(--n-0);
+
+/* Shake person-status roles — the app's core semantic layer */
+--status-safe:var(--t-40);--status-safe-container:var(--t-90);--status-on-safe-container:var(--t-10);
+--status-missing:var(--e-40);--status-missing-container:var(--e-90);--status-on-missing-container:var(--e-10);
+--status-unconfirmed:var(--c-40);--status-unconfirmed-container:var(--c-90);--status-on-unconfirmed-container:var(--c-10);
+--status-injured:var(--c-30);--status-injured-container:#FFDBC8;--status-on-injured-container:#341100;
+--status-searching:var(--md-primary);--status-searching-container:var(--p-90);--status-on-searching-container:var(--p-10);
+
+/* Seismic intensity ramp (MMI-style), used on maps and shake meters */
+--seismic-1:#DEE0FF;--seismic-2:#96F9AE;--seismic-3:#FFDFA6;--seismic-4:#F5B119;--seismic-5:#FF8A3D;--seismic-6:#E22B26;--seismic-7:#93000A;
+}
+[data-theme="dark"]{
+--md-primary:var(--p-80);--md-on-primary:var(--p-20);--md-primary-container:var(--p-30);--md-on-primary-container:var(--p-90);
+--md-secondary:var(--s-80);--md-on-secondary:var(--s-20);--md-secondary-container:var(--s-30);--md-on-secondary-container:var(--s-90);
+--md-tertiary:var(--t-80);--md-on-tertiary:var(--t-20);--md-tertiary-container:var(--t-30);--md-on-tertiary-container:var(--t-90);
+--md-error:var(--e-80);--md-on-error:var(--e-20);--md-error-container:var(--e-30);--md-on-error-container:var(--e-90);
+--md-caution:var(--c-80);--md-on-caution:var(--c-20);--md-caution-container:var(--c-30);--md-on-caution-container:var(--c-90);
+--md-surface:var(--n-6);--md-on-surface:var(--n-90);--md-surface-variant:var(--nv-30);--md-on-surface-variant:var(--nv-80);
+--md-surface-dim:var(--n-6);--md-surface-bright:var(--n-24);
+--md-surface-container-lowest:var(--n-4);--md-surface-container-low:var(--n-10);--md-surface-container:var(--n-12);--md-surface-container-high:var(--n-17);--md-surface-container-highest:var(--n-22);
+--md-outline:var(--nv-60);--md-outline-variant:var(--nv-30);
+--md-inverse-surface:var(--n-90);--md-inverse-on-surface:var(--n-20);--md-inverse-primary:var(--p-40);
+--status-safe:var(--t-80);--status-safe-container:var(--t-30);--status-on-safe-container:var(--t-90);
+--status-missing:var(--e-80);--status-missing-container:var(--e-30);--status-on-missing-container:var(--e-90);
+--status-unconfirmed:var(--c-80);--status-unconfirmed-container:var(--c-30);--status-on-unconfirmed-container:var(--c-90);
+}

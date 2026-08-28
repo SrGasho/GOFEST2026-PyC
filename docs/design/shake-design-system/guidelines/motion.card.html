@@ -1,0 +1,8 @@
+<!-- @dsCard group="Motion" viewport="700x170" name="Duration & easing" subtitle="Emphasized for anything a user initiated" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{padding:16px;background:var(--md-surface)}.sw{display:flex;flex-direction:column;gap:6px}.chipn{font:var(--type-label-small);letter-spacing:var(--tracking-label-small);color:var(--md-on-surface-variant)}.grid{display:grid;gap:10px}.b{border-radius:var(--shape-sm);height:56px;display:flex;align-items:flex-end;padding:6px 8px;font:var(--type-label-small)}</style>
+</head><body><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font:var(--type-body-small)">
+<div style="padding:10px;border:1px solid var(--md-outline-variant);border-radius:var(--shape-sm)"><div style="font:var(--type-title-small)">Durations</div><div class="chipn">short 50–200 · medium 250–400 · long 450–600 · extra-long 700–800</div></div>
+<div style="padding:10px;border:1px solid var(--md-outline-variant);border-radius:var(--shape-sm)"><div style="font:var(--type-title-small)">Easing</div><div class="chipn">standard (0.2,0,0,1) · emphasized-decelerate (0.05,0.7,0.1,1) · emphasized-accelerate (0.3,0,0.8,0.15)</div></div>
+<div style="grid-column:1/-1;height:8px;border-radius:999px;background:var(--md-secondary-container);overflow:hidden;position:relative"><span style="position:absolute;left:0;top:0;bottom:0;width:40%;background:var(--md-primary);border-radius:999px;animation:shake-indeterminate 1.6s var(--ease-standard) infinite"></span></div>
+<div class="chipn" style="grid-column:1/-1">Reduced motion zeroes every duration token; nothing in Shake depends on animation to be understood.</div></div></body></html>

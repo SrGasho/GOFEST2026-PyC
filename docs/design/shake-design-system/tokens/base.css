@@ -1,0 +1,15 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--md-surface);color:var(--md-on-surface);font:var(--type-body-medium);letter-spacing:var(--tracking-body-medium);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--md-primary);text-decoration:none;text-underline-offset:3px}
+a:hover{color:var(--p-30);text-decoration:underline}
+h1,h2,h3,h4,h5{margin:0;font-family:var(--font-brand);font-weight:400}
+p{margin:0}
+::selection{background:var(--md-primary-container);color:var(--md-on-primary-container)}
+:focus-visible{outline:var(--border-w-focus) solid var(--md-primary);outline-offset:2px}
+@keyframes shake-spin{to{transform:rotate(360deg)}}
+@keyframes shake-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes shake-ripple{from{transform:scale(.4);opacity:.5}to{transform:scale(1);opacity:0}}
+@keyframes shake-fade{from{opacity:0}to{opacity:1}}
+@keyframes shake-sheet-in{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes shake-snack-in{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes shake-indeterminate{0%{left:-40%}100%{left:100%}}

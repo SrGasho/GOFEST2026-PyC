@@ -1,0 +1,12 @@
+:root{
+/* 4dp grid */
+--space-0:0px;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-7:28px;--space-8:32px;--space-10:40px;--space-12:48px;--space-14:56px;--space-16:64px;--space-20:80px;--space-24:96px;
+/* Compact-window (mobile) layout */
+--screen-margin:16px;--pane-gutter:16px;--list-gap:8px;
+--touch-target:48px;
+--top-app-bar-h:64px;--top-app-bar-large-h:152px;--nav-bar-h:80px;--fab-size:56px;--fab-small:40px;--fab-large:96px;
+--list-item-1line:56px;--list-item-2line:72px;--list-item-3line:88px;
+--icon-sm:20px;--icon-md:24px;--icon-lg:40px;--icon-xl:48px;
+--avatar-sm:32px;--avatar-md:40px;--avatar-lg:56px;
+--sheet-max-w:640px;--phone-w:412px;--phone-h:892px;
+}

@@ -1,0 +1,20 @@
+:root{
+/* Material 3 type scale — Roboto Flex (brand) for display/headline, Roboto (plain) for the rest */
+--type-display-large:400 57px/64px var(--font-brand);--tracking-display-large:-0.25px;
+--type-display-medium:400 45px/52px var(--font-brand);--tracking-display-medium:0px;
+--type-display-small:400 36px/44px var(--font-brand);--tracking-display-small:0px;
+--type-headline-large:400 32px/40px var(--font-brand);--tracking-headline-large:0px;
+--type-headline-medium:400 28px/36px var(--font-brand);--tracking-headline-medium:0px;
+--type-headline-small:400 24px/32px var(--font-brand);--tracking-headline-small:0px;
+--type-title-large:400 22px/28px var(--font-plain);--tracking-title-large:0px;
+--type-title-medium:500 16px/24px var(--font-plain);--tracking-title-medium:0.15px;
+--type-title-small:500 14px/20px var(--font-plain);--tracking-title-small:0.1px;
+--type-body-large:400 16px/24px var(--font-plain);--tracking-body-large:0.5px;
+--type-body-medium:400 14px/20px var(--font-plain);--tracking-body-medium:0.25px;
+--type-body-small:400 12px/16px var(--font-plain);--tracking-body-small:0.4px;
+--type-label-large:500 14px/20px var(--font-plain);--tracking-label-large:0.1px;
+--type-label-medium:500 12px/16px var(--font-plain);--tracking-label-medium:0.5px;
+--type-label-small:500 11px/16px var(--font-plain);--tracking-label-small:0.5px;
+--type-mono:400 13px/20px var(--font-mono);--tracking-mono:0px;
+--weight-light:300;--weight-regular:400;--weight-medium:500;--weight-bold:700;
+}

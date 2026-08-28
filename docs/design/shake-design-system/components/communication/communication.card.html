@@ -1,0 +1,15 @@
+<!-- @dsCard group="Components" viewport="700x200" name="Communication" subtitle="Badges, progress and snackbar" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>body{padding:20px;background:var(--md-surface);display:flex;align-items:center}#root{width:100%}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script><script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">const {Badge, ProgressIndicator, Snackbar, Button} = window.ShakeDesignSystem_bf929b;
+function Demo(){return(<div className="col" style={{gap:18}}>
+<div className="row" style={{gap:24}}><Badge count={3}/><Badge count={128}/><Badge dot/><Badge count={7} color="primary"/><Badge dot color="tertiary"/>
+<span style={{width:1,height:32,background:'var(--md-outline-variant)'}}/>
+<ProgressIndicator variant="circular" size={32}/><ProgressIndicator variant="circular" size={32} value={65}/></div>
+<ProgressIndicator/><ProgressIndicator value={72}/>
+<div style={{position:'relative',height:64}}><Snackbar message="Report submitted — responders notified" action="Undo" style={{bottom:8,left:0,right:0}}/></div>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);</script></body></html>

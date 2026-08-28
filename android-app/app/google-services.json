@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "470981835856",
+    "project_id": "gofest-shake-2026",
+    "storage_bucket": "gofest-shake-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470981835856:android:0b489bbda7c61d8504a555",
+        "android_client_info": {
+          "package_name": "com.gofest.shake"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmrYSv-KIdZsLTslmWjxA9TSqG-dBsnvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

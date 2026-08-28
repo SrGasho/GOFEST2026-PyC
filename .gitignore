@@ -1,0 +1,14 @@
+# Android / Gradle
+android-app/.gradle/
+android-app/local.properties
+android-app/app/build/
+android-app/build/
+*.iml
+.idea/
+.DS_Store
+
+# Node (cloud/functions)
+node_modules/
+npm-debug.log*
+*.log
+.env

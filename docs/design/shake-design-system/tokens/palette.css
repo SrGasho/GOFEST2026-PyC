@@ -1,0 +1,19 @@
+:root{
+/* Brand mark colours, sampled from assets/logo-shield.png */
+--brand-blue:#3D6AB3;--brand-red:#E22B26;--brand-green:#1F9847;--brand-yellow:#F5B119;
+
+/* Primary key colour #1B4DFF -> tonal palette */
+--p-0:#000000;--p-10:#00115B;--p-20:#001E8C;--p-30:#0F32C4;--p-40:#1B4DFF;--p-50:#4A6BFF;--p-60:#7089FF;--p-70:#96A6FF;--p-80:#BAC3FF;--p-90:#DEE0FF;--p-95:#F0EEFF;--p-99:#FEFBFF;--p-100:#FFFFFF;
+/* Secondary — desaturated blue */
+--s-10:#151B2C;--s-20:#2A3042;--s-30:#414659;--s-40:#595E72;--s-50:#72768B;--s-60:#8C90A5;--s-70:#A6AAC0;--s-80:#C2C5DD;--s-90:#DEE1F9;--s-95:#EDEFFF;--s-99:#FEFBFF;
+/* Tertiary — brand green, the "found safe" family */
+--t-10:#002110;--t-20:#00391D;--t-30:#00522C;--t-40:#1F6D3C;--t-50:#1F9847;--t-60:#41B564;--t-70:#5DD17D;--t-80:#78EE97;--t-90:#96F9AE;--t-95:#C7FFD3;--t-99:#F5FFF5;
+/* Error — brand red */
+--e-10:#410002;--e-20:#690005;--e-30:#93000A;--e-40:#BA1A1A;--e-50:#E22B26;--e-60:#FF5449;--e-70:#FF897D;--e-80:#FFB4AB;--e-90:#FFDAD6;--e-95:#FFEDEA;--e-99:#FFFBFF;
+/* Caution — brand yellow, the "unconfirmed" family */
+--c-10:#271900;--c-20:#412D00;--c-30:#5E4200;--c-40:#7D5800;--c-50:#9E7000;--c-60:#C08900;--c-70:#F5B119;--c-80:#FFCF6A;--c-90:#FFDFA6;--c-95:#FFEFD5;
+/* Neutral */
+--n-0:#000000;--n-4:#0C0D12;--n-6:#121318;--n-10:#1A1B21;--n-12:#1E1F25;--n-17:#282A30;--n-20:#2F3036;--n-22:#34353B;--n-24:#393A40;--n-30:#46464D;--n-40:#5D5E65;--n-50:#76767E;--n-60:#909098;--n-70:#ABABB3;--n-80:#C7C6CF;--n-87:#DBDAE4;--n-90:#E3E1EB;--n-92:#E9E7F1;--n-94:#EFEDF7;--n-96:#F5F3FD;--n-98:#FBF8FF;--n-99:#FEFBFF;--n-100:#FFFFFF;
+/* Neutral variant */
+--nv-30:#45464F;--nv-40:#5C5D67;--nv-50:#767680;--nv-60:#90909A;--nv-70:#ABAAB5;--nv-80:#C6C5D0;--nv-90:#E2E1EC;--nv-95:#F1EFFA;
+}

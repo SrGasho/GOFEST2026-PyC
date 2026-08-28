@@ -1,0 +1,13 @@
+:root{
+--state-hover:0.08; /* @kind other */
+--state-focus:0.10; /* @kind other */
+--state-pressed:0.10; /* @kind other */
+--state-dragged:0.16; /* @kind other */
+--state-disabled-content:0.38; /* @kind other */
+--state-disabled-container:0.12; /* @kind other */
+--scrim-opacity:0.32; /* @kind other */
+--layer-hover-primary:color-mix(in srgb,var(--md-primary) 8%,transparent);
+--layer-pressed-primary:color-mix(in srgb,var(--md-primary) 10%,transparent);
+--layer-hover-on-surface:color-mix(in srgb,var(--md-on-surface) 8%,transparent);
+--layer-pressed-on-surface:color-mix(in srgb,var(--md-on-surface) 10%,transparent);
+}

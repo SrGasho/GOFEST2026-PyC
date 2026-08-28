@@ -1,0 +1,8 @@
+:root{
+/* Material 3 shape scale */
+--shape-none:0px;--shape-xs:4px;--shape-sm:8px;--shape-md:12px;--shape-lg:16px;--shape-xl:28px;--shape-full:999px;
+--shape-button:var(--shape-full);--shape-card:var(--shape-md);--shape-fab:var(--shape-lg);--shape-fab-large:var(--shape-xl);
+--shape-text-field:var(--shape-xs) var(--shape-xs) 0 0;--shape-text-field-outlined:var(--shape-xs);
+--shape-dialog:var(--shape-xl);--shape-sheet:var(--shape-xl) var(--shape-xl) 0 0;--shape-chip:var(--shape-sm);--shape-snackbar:var(--shape-xs);
+--border-w:1px;--border-w-thick:2px;--border-w-focus:3px;
+}
