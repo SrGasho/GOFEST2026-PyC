@@ -1,20 +1,38 @@
 # Google Shake — GoFest 26 (Rebuild Colombia)
 
-Prototipo de hackathon: una app Android que ayuda a localizar personas tras un
-sismo cuando no hay red móvil ni internet, usando **WiFi Direct** para el
-enlace corto entre víctima y rescatista, y sincronización oportunista a la
-nube (**Pub/Sub → Cloud Functions → Firestore**) para consolidar hallazgos en
-un panel web con **Google Maps**.
+**Google Shake** es una app Android que ayuda a localizar personas tras un
+sismo cuando no hay red móvil ni internet. La víctima emite un beacon por
+**WiFi Direct** y un rescatista cercano lo detecta y dispara una alarma local,
+sin infraestructura ni emparejamiento. En cuanto algún dispositivo recupera
+datos móviles, el hallazgo se sincroniza a la nube
+(**Pub/Sub → Cloud Functions → Firestore**) y a un panel web con **Google Maps**.
 
-Escenario de referencia: sismo M7.4 en San José del Palmar, Chocó (10 de
-agosto de 2026). Ver [`google-shake-mvp.md`](./google-shake-mvp.md) para el
-brief completo del hackathon.
+Prototipo de hackathon (GoFest 26 - Rebuild Colombia). Escenario de referencia:
+sismo M7.4 en San José del Palmar, Chocó (10 de agosto de 2026). Ver
+[`docs/google-shake-mvp.md`](./docs/google-shake-mvp.md) para el brief completo.
 
 > Esto es un prototipo de hackathon, no software de producción: sin tests
 > automatizados, con datos de muestra localizados y sin hardening de
 > seguridad más allá de lo indispensable (reglas de Firestore, función
 > intermedia para no exponer credenciales de Pub/Sub, API key de Maps
 > restringida por servicio).
+
+## Inicio rápido
+
+Requisitos: **Android SDK + JDK 17** para la app, **Node.js 22 + Firebase CLI**
+para la nube, **Python 3** (o cualquier servidor estático) para el panel. El
+proyecto Firebase real (`gofest-shake-2026`) ya está cableado en los archivos
+de configuración, así que no hace falta crear nada.
+
+| Componente | Desde la raíz del repo | Resultado |
+|------------|------------------------|-----------|
+| App Android | `cd android-app && ./gradlew assembleDebug` | APK en `app/build/outputs/apk/debug/app-debug.apk` |
+| Cloud | `cd cloud && firebase deploy --only firestore:rules,functions --project gofest-shake-2026` | Functions + reglas desplegadas |
+| Panel web | `cd panel && python3 -m http.server 8080` | Panel en `http://localhost:8080` |
+
+Para probar el mecanismo extremo a extremo hace falta instalar el APK en **dos
+teléfonos** (uno emite el beacon, el otro escanea). Detalle por componente en
+las secciones de abajo.
 
 ## Cómo funciona
 
@@ -61,7 +79,7 @@ android-app/   App Android nativa (Kotlin + Jetpack Compose)
 cloud/         Cloud Functions, reglas de Firestore, esquema de datos
 panel/         Panel web estático (Google Maps JS API + Firestore)
 docs/design/   Design system original (Figma handoff) usado como referencia
-google-shake-mvp.md   Brief del hackathon
+docs/google-shake-mvp.md   Brief del hackathon
 ```
 
 ### `android-app/`
@@ -139,12 +157,3 @@ Proyecto real provisionado para el hackathon: **`gofest-shake-2026`**
 - Firebase Auth (acceso anónimo habilitado)
 - Apps registradas: Android (`com.gofest.shake`) y Web (panel)
 - Maps JavaScript API (key restringida al servicio de Maps)
-
-## Estado del MVP
-
-- [x] App Android: theme, mecanismo WiFi Direct + alarma + acelerómetro,
-      8 pantallas, navegación, sync oportunista a Firestore
-- [x] Backend: Cloud Functions + Firestore + Pub/Sub, probado extremo a
-      extremo (HTTPS → Pub/Sub → Firestore)
-- [x] Panel web con Google Maps
-- [x] Proyecto GCP/Firebase real provisionado y conectado
